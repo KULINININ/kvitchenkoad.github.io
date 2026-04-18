@@ -51,6 +51,7 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       background: var(--paper);
+      animation: settle .62s ease both;
     }
 
     .top {
@@ -71,6 +72,8 @@
       line-height: .98;
       overflow-wrap: normal;
       text-wrap: balance;
+      opacity: 0;
+      animation: fade .7s .16s ease forwards;
     }
 
     .name-word {
@@ -93,6 +96,16 @@
       height: auto;
     }
 
+    .mark path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw 1.35s cubic-bezier(.55, 0, .15, 1) forwards;
+    }
+
+    .mark path:last-child {
+      animation-delay: .42s;
+    }
+
     .links {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -110,19 +123,24 @@
       border-radius: 8px;
       color: var(--text);
       text-decoration: none;
+      opacity: 0;
       transition: background-color .18s ease, color .18s ease, transform .18s ease;
+      animation: fade .55s ease forwards;
     }
 
     .card:nth-child(1) {
       background: var(--tg);
+      animation-delay: .5s;
     }
 
     .card:nth-child(2) {
       background: var(--vk);
+      animation-delay: .62s;
     }
 
     .card:nth-child(3) {
       background: var(--habr);
+      animation-delay: .74s;
     }
 
     .card:hover {
@@ -170,6 +188,32 @@
       font-size: 1.25rem;
       line-height: 1;
       transition: transform .18s ease;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes settle {
+      from {
+        transform: scale(.996);
+      }
+
+      to {
+        transform: none;
+      }
     }
 
     @media (max-width: 980px) {
@@ -247,6 +291,24 @@
         font-size: 2.38rem;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      h1,
+      .card {
+        opacity: 1 !important;
+      }
+
+      .mark path {
+        stroke-dashoffset: 0 !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -255,8 +317,8 @@
       <h1><span class="name-word name-surname">Квитченко</span> <span class="name-rest"><span class="name-word">Алексей</span> <span class="name-word">Дмитриевич</span></span></h1>
       <div class="mark" aria-hidden="true">
         <svg viewBox="0 0 160 118" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 91 57 27l27 64M42 66h30M98 27v64M100 59l34-32M103 60l35 31" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 104h116" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path pathLength="1" d="M30 91 57 27l27 64M42 66h30M98 27v64M100 59l34-32M103 60l35 31" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path pathLength="1" d="M22 104h116" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
         </svg>
       </div>
     </div>
