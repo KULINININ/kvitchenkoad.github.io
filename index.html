@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Квитченко Алексей Дмитриевич</title>
+  <meta name="description" content="Контакты Квитченко Алексея Дмитриевича: Telegram, VK и Habr.">
+  <meta name="theme-color" content="#F4F2EA">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Квитченко Алексей Дмитриевич">
+  <meta property="og:description" content="Telegram, VK и Habr.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #F4F2EA;
+      --paper: #F8F6EF;
+      --text: #171717;
+      --muted: #68665F;
+      --border: #D5D1C6;
+      --focus: #2F6F5E;
+      --tg: #C7DCD6;
+      --vk: #D9D7E8;
+      --habr: #E6DED1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: min(100%, 1180px);
+      padding: 44px 30px 26px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .top {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 88px;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-size: 4.4rem;
+      font-weight: 700;
+      line-height: .98;
+      overflow-wrap: normal;
+      text-wrap: balance;
+    }
+
+    .name-word {
+      display: inline-block;
+    }
+
+    .name-rest {
+      display: inline;
+    }
+
+    .mark {
+      width: 156px;
+      color: var(--text);
+      opacity: .95;
+    }
+
+    .mark svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      min-width: 0;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      border: 1px solid rgba(23, 23, 23, .04);
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      transition: background-color .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .card:nth-child(1) {
+      background: var(--tg);
+    }
+
+    .card:nth-child(2) {
+      background: var(--vk);
+    }
+
+    .card:nth-child(3) {
+      background: var(--habr);
+    }
+
+    .card:hover {
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    .card:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .card:hover .arrow,
+    .card:focus-visible .arrow {
+      transform: translateX(2px);
+    }
+
+    .service {
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .value {
+      min-width: 0;
+      display: flex;
+      gap: 12px;
+      align-items: end;
+      justify-content: space-between;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .value span:first-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .arrow {
+      flex: 0 0 auto;
+      color: var(--text);
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: transform .18s ease;
+    }
+
+    @media (max-width: 980px) {
+      .top {
+        gap: 24px;
+        margin-bottom: 58px;
+      }
+
+      h1 {
+        font-size: 3.3rem;
+      }
+
+      .mark {
+        width: 124px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 14px;
+      }
+
+      main {
+        padding: 26px 18px 18px;
+      }
+
+      .top {
+        display: block;
+        margin-bottom: 34px;
+      }
+
+      h1 {
+        max-width: none;
+        padding-right: 0;
+        font-size: 2.72rem;
+        line-height: .92;
+      }
+
+      .name-surname,
+      .name-rest {
+        display: block;
+      }
+
+      .name-rest {
+        margin-top: 12px;
+        color: var(--muted);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: .5em;
+        font-weight: 750;
+        line-height: 1.15;
+      }
+
+      .mark {
+        display: none;
+      }
+
+      .links {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .card {
+        min-height: 128px;
+        padding: 22px;
+      }
+
+      .service {
+        font-size: 1.35rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      h1 {
+        padding-right: 0;
+        font-size: 2.38rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main aria-label="Контакты">
+    <div class="top">
+      <h1><span class="name-word name-surname">Квитченко</span> <span class="name-rest"><span class="name-word">Алексей</span> <span class="name-word">Дмитриевич</span></span></h1>
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 160 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 91 57 27l27 64M42 66h30M98 27v64M100 59l34-32M103 60l35 31" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 104h116" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <nav class="links" aria-label="Ссылки">
+      <a class="card" href="https://t.me/KULININ" rel="me noopener noreferrer" target="_blank" aria-label="Открыть Telegram">
+        <span class="service">Telegram</span>
+        <span class="value"><span>@KULININ</span><span class="arrow">→</span></span>
+      </a>
+      <a class="card" href="https://vk.com/kvitchenkoad" rel="me noopener noreferrer" target="_blank" aria-label="Открыть VK">
+        <span class="service">VK</span>
+        <span class="value"><span>vk.com/kvitchenkoad</span><span class="arrow">→</span></span>
+      </a>
+      <a class="card" href="https://career.habr.com/kulininin" rel="me noopener noreferrer" target="_blank" aria-label="Открыть Habr">
+        <span class="service">Habr</span>
+        <span class="value"><span>career.habr.com/kulininin</span><span class="arrow">→</span></span>
+      </a>
+    </nav>
+  </main>
+</body>
+</html>
