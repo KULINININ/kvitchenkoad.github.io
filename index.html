@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Квитченко Алексей Дмитриевич</title>
-  <meta name="description" content="Контакты Квитченко Алексея Дмитриевича: Telegram, VK и Habr.">
+  <meta name="description" content="Контакты Квитченко Алексея Дмитриевича: Telegram, VK, Habr и GitHub.">
   <meta name="theme-color" content="#F4F2EA">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Квитченко Алексей Дмитриевич">
-  <meta property="og:description" content="Telegram, VK и Habr.">
+  <meta property="og:description" content="Telegram, VK, Habr и GitHub.">
   <style>
     :root {
       color-scheme: light;
@@ -21,6 +21,7 @@
       --tg: #C7DCD6;
       --vk: #D9D7E8;
       --habr: #E6DED1;
+      --github: #DDE3DA;
     }
 
     * {
@@ -108,7 +109,7 @@
 
     .links {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 30px;
     }
 
@@ -141,6 +142,11 @@
     .card:nth-child(3) {
       background: var(--habr);
       animation-delay: .74s;
+    }
+
+    .card:nth-child(4) {
+      background: var(--github);
+      animation-delay: .86s;
     }
 
     .card:hover {
@@ -228,6 +234,10 @@
 
       .mark {
         width: 124px;
+      }
+
+      .links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -335,6 +345,10 @@
       <a class="card" href="https://career.habr.com/kulininin" rel="me noopener noreferrer" target="_blank" aria-label="Открыть Habr">
         <span class="service">Habr</span>
         <span class="value"><span>career.habr.com/kulininin</span><span class="arrow">→</span></span>
+      </a>
+      <a class="card" href="https://github.com/KULINININ" rel="me noopener noreferrer" target="_blank" aria-label="Открыть GitHub">
+        <span class="service">GitHub</span>
+        <span class="value"><span>github.com/KULINININ</span><span class="arrow">→</span></span>
       </a>
     </nav>
   </main>
