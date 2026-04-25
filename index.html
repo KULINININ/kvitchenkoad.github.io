@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Квитченко Алексей Дмитриевич</title>
-  <meta name="description" content="Контакты Квитченко Алексея Дмитриевича: Telegram, VK, Habr и GitHub.">
+  <meta name="description" content="Контакты и резюме Квитченко Алексея Дмитриевича.">
   <meta name="theme-color" content="#F4F2EA">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23F4F2EA'/%3E%3Crect x='7' y='7' width='50' height='50' rx='8' fill='%23F8F6EF' stroke='%23D5D1C6' stroke-width='2'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' font-weight='700' fill='%23171717'%3EAK%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Квитченко Алексей Дмитриевич">
-  <meta property="og:description" content="Telegram, VK, Habr и GitHub.">
+  <meta property="og:description" content="Контакты и резюме.">
   <style>
     :root {
       color-scheme: light;
@@ -21,16 +21,11 @@
       --focus: #2F6F5E;
       --tg: #C7DCD6;
       --vk: #D9D7E8;
-      --habr: #E6DED1;
       --github: #DDE3DA;
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      min-height: 100%;
     }
 
     body {
@@ -42,7 +37,6 @@
       background: var(--bg);
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      letter-spacing: 0;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
@@ -57,7 +51,6 @@
     }
 
     .top {
-      position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 32px;
@@ -82,13 +75,8 @@
       display: inline-block;
     }
 
-    .name-rest {
-      display: inline;
-    }
-
     .mark {
       width: 156px;
-      color: var(--text);
       opacity: .95;
     }
 
@@ -110,7 +98,7 @@
 
     .links {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
@@ -126,7 +114,7 @@
       color: var(--text);
       text-decoration: none;
       opacity: 0;
-      transition: background-color .18s ease, color .18s ease, transform .18s ease;
+      transition: box-shadow .18s ease, color .18s ease, transform .18s ease;
       animation: fade .55s ease forwards;
     }
 
@@ -141,18 +129,14 @@
     }
 
     .card:nth-child(3) {
-      background: var(--habr);
-      animation-delay: .74s;
-    }
-
-    .card:nth-child(4) {
       background: var(--github);
-      animation-delay: .86s;
+      animation-delay: .74s;
     }
 
     .card:hover {
       color: #000;
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(23, 23, 23, .08);
     }
 
     .card:focus-visible {
@@ -197,6 +181,201 @@
       transition: transform .18s ease;
     }
 
+    .resume {
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #F2EBDD;
+      overflow: hidden;
+      opacity: 0;
+      animation: fade .55s .86s ease forwards;
+    }
+
+    .resume-head {
+      min-height: 132px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 32px;
+      border-bottom: 1px solid rgba(23, 23, 23, .14);
+    }
+
+    .resume-head::after {
+      content: "web cv";
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .resume-title {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .resume-note {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .resume-content {
+      display: grid;
+      grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr);
+      gap: 34px;
+      padding: 34px 32px 36px;
+      min-width: 0;
+    }
+
+    .resume-lead {
+      display: grid;
+      gap: 22px;
+    }
+
+    .experience {
+      margin-top: 0;
+      padding-top: 0;
+      padding-left: 34px;
+      border-top: 0;
+      border-left: 1px solid rgba(23, 23, 23, .14);
+    }
+
+    .resume-side,
+    .experience,
+    .job,
+    .job > div {
+      min-width: 0;
+    }
+
+    .resume h2,
+    .resume h3,
+    .resume p {
+      margin: 0;
+    }
+
+    .resume h2 {
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-size: 2.28rem;
+      line-height: .98;
+    }
+
+    .resume h3 {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .resume-meta,
+    .resume-list {
+      margin-top: 16px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .resume-meta {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .resume-list {
+      display: grid;
+      gap: 10px;
+      font-size: .98rem;
+      line-height: 1.35;
+    }
+
+    .resume a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .resume-section,
+    .job {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(23, 23, 23, .14);
+    }
+
+    .skills {
+      margin-top: 14px;
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .job {
+      display: grid;
+      gap: 12px;
+    }
+
+    .job-period {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.35;
+      white-space: normal;
+    }
+
+    .role {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .job strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.28rem;
+      line-height: 1.2;
+    }
+
+    .job p,
+    .job-list,
+    .about-list {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .job p,
+    .job-list li {
+      overflow-wrap: break-word;
+    }
+
+    .job p {
+      margin-top: 2px;
+    }
+
+    .job-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .resume b {
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 0;
+      padding-left: 1.1rem;
+    }
+
     @keyframes draw {
       to {
         stroke-dashoffset: 0;
@@ -235,6 +414,18 @@
 
       .mark {
         width: 124px;
+      }
+
+      .resume-content {
+        display: block;
+      }
+
+      .experience {
+        margin-top: 28px;
+        padding-top: 22px;
+        padding-left: 0;
+        border-top: 1px solid rgba(23, 23, 23, .14);
+        border-left: 0;
       }
     }
 
@@ -290,6 +481,40 @@
       .service {
         font-size: 1.35rem;
       }
+
+      .resume-head {
+        min-height: 104px;
+        padding: 22px;
+      }
+
+      .resume-head::after {
+        display: none;
+      }
+
+      .resume-content {
+        padding: 28px 22px 24px;
+      }
+
+      .resume-lead {
+        gap: 14px;
+      }
+
+      .job-period {
+        font-size: .9rem;
+      }
+
+      .resume h2 {
+        font-size: 2rem;
+      }
+
+      .resume-note,
+      .resume-meta,
+      .resume-list,
+      .job p,
+      .job-list,
+      .about-list {
+        font-size: .95rem;
+      }
     }
 
     @media (max-width: 360px) {
@@ -308,18 +533,21 @@
       }
 
       h1,
-      .card {
+      .card,
+      .resume {
         opacity: 1 !important;
+        transform: none !important;
       }
 
       .mark path {
         stroke-dashoffset: 0 !important;
       }
+
     }
   </style>
 </head>
 <body>
-  <main aria-label="Контакты">
+  <main>
     <div class="top">
       <h1><span class="name-word name-surname">Квитченко</span> <span class="name-rest"><span class="name-word">Алексей</span> <span class="name-word">Дмитриевич</span></span></h1>
       <div class="mark" aria-hidden="true">
@@ -330,24 +558,173 @@
       </div>
     </div>
 
-    <nav class="links" aria-label="Ссылки">
-      <a class="card" href="https://t.me/KULININ" rel="me noopener noreferrer" target="_blank" aria-label="Открыть Telegram">
+    <nav class="links">
+      <a class="card" href="https://t.me/KULININ" rel="me noopener noreferrer" target="_blank">
         <span class="service">Telegram</span>
         <span class="value"><span>@KULININ</span><span class="arrow">→</span></span>
       </a>
-      <a class="card" href="https://vk.com/kvitchenkoad" rel="me noopener noreferrer" target="_blank" aria-label="Открыть VK">
+      <a class="card" href="https://vk.com/kvitchenkoad" rel="me noopener noreferrer" target="_blank">
         <span class="service">VK</span>
         <span class="value"><span>vk.com/kvitchenkoad</span><span class="arrow">→</span></span>
       </a>
-      <a class="card" href="https://career.habr.com/kulininin" rel="me noopener noreferrer" target="_blank" aria-label="Открыть Habr">
-        <span class="service">Habr</span>
-        <span class="value"><span>career.habr.com/kulininin</span><span class="arrow">→</span></span>
-      </a>
-      <a class="card" href="https://github.com/KULINININ" rel="me noopener noreferrer" target="_blank" aria-label="Открыть GitHub">
+      <a class="card" href="https://github.com/KULINININ" rel="me noopener noreferrer" target="_blank">
         <span class="service">GitHub</span>
         <span class="value"><span>github.com/KULINININ</span><span class="arrow">→</span></span>
       </a>
     </nav>
+
+    <section class="resume">
+      <div class="resume-head">
+        <span>
+          <span class="resume-title">Резюме</span>
+          <span class="resume-note">опыт, навыки, телефон, почта</span>
+        </span>
+      </div>
+
+      <div class="resume-content">
+        <div class="resume-side">
+        <section class="resume-lead">
+          <div>
+            <h2>Фронтенд-разработчик</h2>
+            <ul class="resume-meta">
+              <li>Стаж: <span data-duration="2021-11">4 года и 6 месяцев</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Контакты</h3>
+            <ul class="resume-list">
+              <li><a href="tel:+79518012945">+7 951 801-29-45</a></li>
+              <li><a href="mailto:kvitchenkoad@gmail.com">kvitchenkoad@gmail.com</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <h3>Навыки</h3>
+          <p class="skills">Vue.js • TypeScript • JavaScript • Docker • Git • Linux • SQL • Python • Vite • Webpack • Lit • Angular • PHP</p>
+        </section>
+
+        <section class="resume-section">
+          <h3>Образование</h3>
+          <p class="role">Южно-Уральский государственный университет, Высшая школа электроники и компьютерных наук. Бакалавриат, красный диплом.</p>
+        </section>
+
+        <section class="resume-section">
+          <h3>О себе</h3>
+          <ul class="about-list">
+            <li>Есть опыт выступлений на международных научных конференциях.</li>
+            <li>Беру ответственность за технические и продуктовые решения.</li>
+          </ul>
+        </section>
+        </div>
+
+        <section class="resume-section experience">
+          <h3>Опыт работы</h3>
+
+          <article class="job">
+            <div class="job-head">
+              <strong>YCLIENTS</strong>
+              <span class="job-period">Сентябрь 2024 — по настоящее время</span>
+            </div>
+            <div>
+              <div class="role">Фронтенд разработчик</div>
+              <p><b>Проект:</b> облачная SaaS-платформа для онлайн-записи и автоматизации бизнес-процессов (ERP).</p>
+              <p><b>Задачи:</b></p>
+              <ul class="job-list">
+                <li><b>Feature-лид</b> перехода аналитики с <b>Google Analytics / GTM</b> на <b>Яндекс Метрику</b>: спроектировал решение, <b>декомпозировал</b> задачи для разработчиков, координировал внедрение и тестирование.</li>
+                <li><b>Спроектировал и реализовал интеграцию Mindbox</b>: обеспечил <b>безопасность</b> и отказоустойчивость приложения за счёт изоляции интеграции, интегрировал уведомления Mindbox в продукт.</li>
+                <li>Участвовал в реализации <b>offline-режима приложения</b>: реализовал <b>предзагрузку и кеширование</b> статики через <b>WebWorker</b>, а также логику отключения offline-функциональности по feature-флагу.</li>
+                <li>Участвовал в создании <b>UI Kit</b> на <b>Web Components (Lit)</b> с поддержкой <b>Vue и Angular</b>: предлагал архитектурные решения, методы и подходы.</li>
+                <li><b>Работал над производительностью фронтенда</b>: профилирование и оптимизации.</li>
+                <li><b>Выполнял backend-задачи на PHP</b> для поддержки и развития frontend-функциональности и интеграций.</li>
+              </ul>
+              <p><b>Применяемые навыки:</b> Vue.js, JavaScript, Vite, Webpack, Lit Elements, Angular, TypeScript, PHP.</p>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <strong>Rentu</strong>
+              <span class="job-period">Декабрь 2022 — сентябрь 2024</span>
+            </div>
+            <div>
+              <div class="role">Фронтенд разработчик</div>
+              <p><b>Проект:</b> разработка аналитической платформы для торговых центров (BI-платформа), которая производит автоматизированный сбор данных, аналитику и даёт рекомендации по принятию решений.</p>
+              <p><b>Стек:</b> Vue.js, JavaScript, AmChart, Storybook, i18n, SASS, Element Plus, Vite, HTML, CSS, Git.</p>
+              <p><b>Команда разработчиков:</b> 16 человек: 8 frontend (Vue), 8 backend (Ruby).</p>
+              <p><b>Задачи:</b></p>
+              <p><b>Программирование</b></p>
+              <ul class="job-list">
+                <li>Участвовал в разработке в роли <b>фич-лида</b>. Занимался <b>проектированием и декомпозицией задач</b>.</li>
+                <li>Разработал <b>большую часть</b> нового проекта <b>личных кабинетов</b>.</li>
+                <li>Разработал <b>большую часть UI Kit</b> с использованием <b>Storybook</b>.</li>
+                <li>Настраивал сборщик <b>Vite</b>: настроил сборку UI Kit, написал <b>полифил</b>.</li>
+                <li>Участвовал в переходе с <b>Vue 2 Options API</b> на <b>Vue 3 Composition API</b>.</li>
+                <li>Выполнял глубокую настройку <b>amChart 4/5</b>.</li>
+                <li>Писал тесты на <b>Vitest</b>.</li>
+                <li>Работал с <b>Legacy</b>.</li>
+              </ul>
+              <p><b>Сопутствующие задачи:</b></p>
+              <ul class="job-list">
+                <li>Написал подробную <b>методичку</b> для онбординга.</li>
+                <li>Проектировал, планировал, декомпозировал задачи, после раздавал разработчикам и ревьюил их код.</li>
+                <li>Прорабатывал задачи с <b>backend</b> командой.</li>
+              </ul>
+              <p><b>Применяемые навыки:</b> Vue.js, JavaScript, Vite, Storybook, HTML, CSS, SCSS, Git.</p>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <strong>Vizerapy / UpMIND+</strong>
+              <span class="job-period">Ноябрь 2021 — декабрь 2022</span>
+            </div>
+            <div>
+              <div class="role">Фулстек разработчик</div>
+              <p><b>Проект:</b> разработка платформы с личными кабинетами администраторов, менеджеров, врачей, пациентов. Основная задача платформы — назначение и просмотр видео.</p>
+              <p><b>Стек:</b> Vue.js, JavaScript, HTML, CSS, Git, PostgreSQL, Redis, nginx, NodeJS.</p>
+              <p><b>Команда разработчиков:</b> 3 человека: fullstack (я), backend (senior), frontend (junior).</p>
+              <p><b>Задачи:</b></p>
+              <p><b>Программирование</b></p>
+              <ul class="job-list">
+                <li><b>Перенос</b> дизайна из Figma в работающий код.</li>
+                <li>Адаптация интерфейса под мобильные устройства.</li>
+                <li>Увеличение скорости работы сайта.</li>
+                <li>Оптимизация обработки данных.</li>
+                <li>Написание кастомного видеоплеера.</li>
+                <li>Работа с Legacy.</li>
+                <li>Доработки в backend и БД.</li>
+              </ul>
+              <p><b>Управление проектом</b></p>
+              <ul class="job-list">
+                <li>Распределение задач в команде.</li>
+                <li>Выбор методов решения задач.</li>
+                <li>Общение с руководством.</li>
+              </ul>
+              <p><b>Применяемые навыки:</b> JavaScript, Node.js, Vue.js, HTML, CSS, Git, SQL, PostgreSQL, TypeScript.</p>
+            </div>
+          </article>
+        </section>
+
+      </div>
+    </section>
   </main>
+  <script>
+    (() => {
+      const now = new Date();
+      const format = (total) => {
+        const years = Math.floor(total / 12);
+        const months = total % 12;
+        const word = (n, one, few, many) => n % 10 === 1 && n % 100 !== 11 ? one : n % 10 > 1 && n % 10 < 5 && (n % 100 < 10 || n % 100 > 20) ? few : many;
+        return [years && `${years} ${word(years, 'год', 'года', 'лет')}`, months && `${months} ${word(months, 'месяц', 'месяца', 'месяцев')}`].filter(Boolean).join(' и ');
+      };
+
+      document.querySelectorAll('[data-duration]').forEach((node) => {
+        const [year, month] = node.dataset.duration.split('-').map(Number);
+        node.textContent = format((now.getFullYear() - year) * 12 + now.getMonth() - month + 2);
+      });
+
+    })();
+  </script>
 </body>
 </html>
